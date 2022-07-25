@@ -94,11 +94,16 @@
                 // Make sure the alert is not visible to the user
                 document.getElementById("alert").classList.add("invisible");
                 // Get the value the user entered into the input and assign it to variable
-                let userString = document.getElementById("userString").value
-                // Assign value returned by reverseString function to variable
-                let revString = reverseString(userString);
-                // Display the value stored in the variable
-                displayString(revString);
+                let userString = document.getElementById("userString").value;
+              
+                if (userString.length >= 2) {
+                  // Assign value returned by reverseString function to variable
+                  let revString = reverseString(userString);
+                  // Display the value stored in the variable
+                  displayString(revString);
+                } else {
+                  alert("Please enter at least 2 characters.");
+                }
               }
               
               // Reverse the string
@@ -126,9 +131,13 @@
           </pre>
           </div>
           <div class="col-lg-4">
-            <p>The code is structured in one function.</p>
-            <h5>Hello World!</h5>
-            <p>HelloWorld() is a function the displays an alert with  a message of "Hello World"</p>
+            <h4>The app uses the following functions:</h4>
+            <h5><code>getValue()</code></h5>
+            <p>This function first checks to make sure the alert message is not visible to the user. Next, it gets the value entered by the user and assigns it to the variable <code>userString</code>. If the length of <code>userString</code> is less than two characters an alert message will be displayed prompting the user to enter a longer string. If <code>userString</code> has a length of at least two characters it is passed into the <code>reverseString()</code> function. The value returned by this function is stored as the variable <code>revString</code>, which is then passed into the <code>displayString()</code> function.</p>
+            <h5><code>reverseString()</code></h5>
+            <p>This function creates an empty array, loops in reverse through each character of the passed in string, then inserts the values to the empty array, populating it with the characters of the string in reverse order. It then returns the value of the populated array.</p>
+            <h5><code>displayString()</code></h5>
+            <p>This function accepts a value and inserts it into a template literal updating the message displayed to the user. It then removes the <code>invisible</code> class from the <code>alert</code> element to make the message visible to the user.</p>
           </div>
         </div>
       </div>
