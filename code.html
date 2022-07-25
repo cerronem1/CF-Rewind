@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>APP-NAME: A Coding Project by Michael Cerrone</title>
+    <title>REWIND: A Coding Project by Michael Cerrone</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -18,7 +18,7 @@
     />
 
     <link rel="stylesheet" href="css/site.css" />
-    <!-- REPLACE THIS  APP-NAME FAVICON -->
+    <!-- REPLACE THIS  REWIND FAVICON -->
     <link
       rel="shortcut icon"
       href="img/under-construction-icon.png"
@@ -37,7 +37,7 @@
     <!-- NAV Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <div class="container-fluid">
-        <!-- REPLACE THIS APP-NAME FAVICON -->
+        <!-- REPLACE THIS REWIND FAVICON -->
         <a class="navbar-brand" href="#"
           ><img
             src="img/construction-icon.png"
@@ -45,7 +45,7 @@
             alt="Turd Logo"
             width="24"
           />
-          APP-NAME</a
+          REWIND</a
         >
         <button
           class="navbar-toggler"
@@ -85,14 +85,43 @@
     <!-- MAIN Section -->
     <main class="flex-shrink-0">
       <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for REWIND</h2>
         <div class="row row-cols-1 row-cols-lg-2">
           <div class="col-lg-8">
           <pre class="line-numbers">
             <code class="language-javascript">
-              // Call HelloWorld function
-              function HelloWorld() {
-                alert("Hello World!");
+              // Get string value from user input
+              function getValue() {
+                // Make sure the alert is not visible to the user
+                document.getElementById("alert").classList.add("invisible");
+                // Get the value the user entered into the input and assign it to variable
+                let userString = document.getElementById("userString").value
+                // Assign value returned by reverseString function to variable
+                let revString = reverseString(userString);
+                // Display the value stored in the variable
+                displayString(revString);
+              }
+              
+              // Reverse the string
+              function reverseString(userString) {
+                // Declare an empty array 
+                let reversedString = [];
+                // Reverse the string using a for loop
+                // Start a last index of array; decrement by 1 each time through loop until index == 0
+                for (let index = userString.length-1; index >= 0; index--) {
+                  // Each iteration will append the new value to the existing string, NOT overwrite it.
+                  reversedString += userString[index];
+                }
+              
+                return reversedString;
+              }
+              
+              // Display the reversed string on the webpage
+              function displayString(revString) {
+                // Write the message to the page
+                document.getElementById("msg").innerHTML = `Your string has been "rewinded" to "${revString}"`;
+                // Turn on the alert to show the reversed string
+                document.getElementById("alert").classList.remove("invisible");
               }
             </code>
           </pre>
@@ -125,7 +154,7 @@
               justify-content-start justify-content-lg-center
             "
           >
-            <!-- Logo (REPLACE THIS APP-NAME LOGO) -->
+            <!-- Logo (REPLACE THIS REWIND LOGO) -->
             <img src="img/construction-icon.png" alt="Logo" height="24" />
           </div>
           <!-- External Link icons (using "Font Awesome") -->
