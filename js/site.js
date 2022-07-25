@@ -4,10 +4,15 @@ function getValue() {
   document.getElementById("alert").classList.add("invisible");
   // Get the value the user entered into the input and assign it to variable
   let userString = document.getElementById("userString").value;
-  // Assign value returned by reverseString function to variable
-  let revString = reverseString(userString);
-  // Display the value stored in the variable
-  displayString(revString);
+
+  if (userString.length >= 2) {
+    // Assign value returned by reverseString function to variable
+    let revString = reverseString(userString);
+    // Display the value stored in the variable
+    displayString(revString);
+  } else {
+    alert("Please enter at least 2 characters.");
+  }
 }
 
 // Logic Function - Reverse the string

@@ -71,3 +71,7 @@ main>.container {
   bottom: 0;
   width: 100%;
 }
+
+#msg {
+  word-wrap: break-word;
+}
