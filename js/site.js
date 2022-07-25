@@ -3,7 +3,7 @@ function getValue() {
   // Make sure the alert is not visible to the user
   document.getElementById("alert").classList.add("invisible");
   // Get the value the user entered into the input and assign it to variable
-  let userString = document.getElementById("userString").value
+  let userString = document.getElementById("userString").value;
   // Assign value returned by reverseString function to variable
   let revString = reverseString(userString);
   // Display the value stored in the variable
